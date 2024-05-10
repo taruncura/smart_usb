@@ -24,7 +24,9 @@ class SmartUsbMacos extends _SmartUsbDesktop {
   // For example/.dart_tool/flutter_build/generated_main.dart
   static registerWith() {
     SmartUsbPlatform.instance = SmartUsbMacos();
-    _libusb = Libusb(DynamicLibrary.open('libusb-1.0.23.dylib'));
+    // _libusb = Libusb(DynamicLibrary.open('libusb-1.0.23.dylib'));
+    _libusb = Libusb(DynamicLibrary.open('${Platform.environment['EXE_DIR_PATH']}/lib/libusb-1.0.23.dylib'));
+
   }
 }
 
